@@ -1,25 +1,26 @@
-import logo from './logo.svg';
 import './App.css';
+import React from "react";
+import NavBar from "./components/NavBar/NavBar";
+import Header from "./components/Header/Header";
+import {Route, Routes} from "react-router";
+import Films from "./components/Films/Films";
+import Main from "./components/Main/Main";
+import Cabinet from "./components/PersonalCabinet/Cabinet";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+const App = () => {
+
+    return (
+        <div className='app-wrapper'>
+            <Header/>
+            <NavBar/>
+            <Routes className='app-wrapper-content'>
+                <Route path='/films' element={<Films/>}></Route>
+                <Route path='/main' element={<Main/>}></Route>
+                <Route path='/cabinet' element={<Cabinet/>}></Route>
+            </Routes>
+        </div>
+    );
 }
 
 export default App;
