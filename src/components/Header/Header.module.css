@@ -1,9 +1,15 @@
 .header {
     grid-area: h;
-    background-color: #a5a5a5;
-    width: 1200px;
+    background-color: #ffffff;
+    height:  75px;
+    border-radius: 20px;
+
+
+
+
 }
 
 .header img {
-    width: 50px;
+    width: 120px;
 }
+

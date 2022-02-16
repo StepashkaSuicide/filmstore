@@ -24,8 +24,13 @@ const NavBar = () => {
                         >
                     Личный кабинет</NavLink>
             </div>
-
-
+            <div className={s.item}>
+                <NavLink to='/chat' style={({ isActive }) => {
+                    return {
+                        color: isActive ? "red" : "" }}}
+                        >
+                    Чат</NavLink>
+            </div>
         </nav>
     );
 };

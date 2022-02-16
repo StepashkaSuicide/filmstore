@@ -1,0 +1,24 @@
+.ava img{
+    width: 200px;
+}
+
+.title {
+    text-align: start;
+}
+
+.description {
+
+    grid-area: d;
+
+}
+
+.ava {
+    width: 200px;
+    grid-area: a;
+}
+.profileContainer {
+    display: grid;
+    justify-content: space-between;
+    grid-template-areas: 'a d';
+    grid-template-columns: 6fr 6fr;
+}

@@ -1,0 +1,13 @@
+.card {
+
+
+    padding: 20px;
+    width: 120px;
+}
+
+.media {
+    display: grid;
+    justify-content: space-between;
+height: 140px;
+    max-width: 345px;
+}
