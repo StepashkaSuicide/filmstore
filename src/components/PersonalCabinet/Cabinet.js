@@ -3,11 +3,12 @@ import s from './Cabinet.module.css'
 import MyPosts from "../MyPosts/MyPosts";
 import Profile from "../Profile/Profile";
 
-const Cabinet = () => {
+const Cabinet = (props) => {
+
     return (
         <div className={s.mainContainer}>
             <Profile/>
-            <MyPosts/>
+            <MyPosts posts={props.state.posts} addPost={props.addPost}/>
         </div>
     );
 };
