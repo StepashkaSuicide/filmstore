@@ -9,6 +9,7 @@ import {compose} from "redux";
 let mapStateToProps = (state) => {
     return {
         chatPage: state.chatPage,
+        newPostText: state.chatPage.newPostText,
     }
 }
 
