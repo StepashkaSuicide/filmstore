@@ -1,14 +1,16 @@
 import React from 'react';
 import s from './Cabinet.module.css'
-import MyPosts from "../MyPosts/MyPosts";
 import Profile from "../Profile/Profile";
+import MyPostsContainer from "../MyPosts/MyPostsContainer";
+
+
 
 const Cabinet = (props) => {
 
     return (
         <div className={s.mainContainer}>
-            <Profile/>
-            <MyPosts posts={props.state.posts} addPost={props.addPost}/>
+            <Profile profile={props.profile} status={props.status} updateStatus={props.updateStatus}/>
+            <MyPostsContainer/>
         </div>
     );
 };

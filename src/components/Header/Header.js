@@ -3,7 +3,7 @@ import s from './Header.module.css'
 import {NavLink} from "react-router-dom";
 
 
-const Header = () => {
+const Header = (props) => {
 
     return (
         <div className={s.header}>
@@ -11,6 +11,10 @@ const Header = () => {
                 <NavLink to='/main'>
                     <img  src={'https://1000logos.net/wp-content/uploads/2016/11/meta-logo.png'}/>
                 </NavLink>
+                <div className={s.auth}>
+                    {props.isAuth ? props.login : <NavLink to={'/login'}>Login</NavLink>}
+
+                </div>
 
             </header>
 

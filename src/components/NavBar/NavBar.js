@@ -1,52 +1,55 @@
 import React from 'react';
 import {NavLink} from "react-router-dom";
 import s from './NavBar.module.css'
-import Friend from "../Friends/Frend/Friend";
 
 
-
-const NavBar = (props) => {
+const NavBar = () => {
     return (
         <nav className={s.nav}>
             <div className={s.item}>
-                <NavLink style={({ isActive }) => {
+                <NavLink style={({isActive}) => {
                     return {
-                        color: isActive ? "red" : "" }}} to='/main'> Основная страница</NavLink>
+                        color: isActive ? "red" : ""
+                    }
+                }} to='/main'> Основная страница</NavLink>
             </div>
 
             <div className={s.item}>
-                <NavLink style={({ isActive }) => {
+                <NavLink style={({isActive}) => {
                     return {
-                        color: isActive ? "red" : "" }}} to='/films'> Фильмы</NavLink>
+                        color: isActive ? "red" : ""
+                    }
+                }} to='/films'> Фильмы</NavLink>
             </div>
 
             <div className={s.item}>
-                <NavLink to='/cabinet' style={({ isActive }) => {
+                <NavLink to='/cabinet' style={({isActive}) => {
                     return {
-                        color: isActive ? "red" : "" }}}
-                        >
+                        color: isActive ? "red" : ""
+                    }
+                }}
+                >
                     Личный кабинет</NavLink>
             </div>
             <div className={s.item}>
-                <NavLink to='/chat' style={({ isActive }) => {
+                <NavLink to='/chat' style={({isActive}) => {
                     return {
-                        color: isActive ? "red" : "" }}}
-                        >
+                        color: isActive ? "red" : ""
+                    }
+                }}
+                >
                     Чат</NavLink>
             </div>
-
-                <div className={s.item}>
-                    <NavLink to='/friends' style={({ isActive }) => {
-                        return {
-                            color: isActive ? "red" : "" }}}
-                    >
-                        Друзья</NavLink>
-                    <div className={s.fr}>
-                        <div><Friend/></div>
-                        <div> <Friend /></div>
-                        <div><Friend /></div>
-                    </div>
+            <div className={s.item}>
+                <NavLink to='/users' style={({isActive}) => {
+                    return {
+                        color: isActive ? "red" : ""
+                    }
+                }}
+                >
+                    Пользователи</NavLink>
             </div>
+
 
         </nav>
     );

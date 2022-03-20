@@ -1,0 +1,26 @@
+.userPhoto {
+    width: 120px;
+    height: 120px;
+
+}
+.container {
+    padding: 15px;
+}
+
+.selectedPage {
+    font-weight: bold;
+}
+
+.cursor {
+    cursor: pointer;
+}
+
+.preloader img {
+    height: 50px;
+    width: 50px;
+
+}
+.preloader {
+    display: flex;
+    justify-content: center;
+}

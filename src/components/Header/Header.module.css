@@ -13,3 +13,11 @@
     width: 120px;
 }
 
+.auth {
+    font-size: 20px;
+    padding: 10px;
+    float: right;
+}
+.auth a {
+    color: #5a2727;
+}

@@ -1,25 +1,34 @@
 import React from 'react';
 import s from './Profile.module.css'
 import Card from "@mui/material/Card";
+import profilePhoto from './../assets/img/profile.png'
+import Preloader from "../common/Preloader/Preloader";
+import ProfileStatus from './ProfileStatus'
 
-const Profile = () => {
+
+const Profile = (props) => {
+    if (!props.profile) {
+        return <Preloader/>
+    }
+
+
     return (
         <div>
             <div className={s.profileContainer}>
                 <Card className={s.ava}>
-                    <img src={'https://cdn.icon-icons.com/icons2/1812/PNG/512/4213460-account-avatar-head-person-profile-user_115386.png'}/>
+
+                    <img src={props.profile.photos.large !=null ? props.profile.photos.large : profilePhoto} alt={'12'}/>
                 </Card>
                 <div className={s.description}>
                     Описание: <br/>
-                    Jeka 29 LET
+                    {props.profile.fullName}
                 </div>
-            </div>
+              </div>
             <div className={s.title}>
                 title
                 <div>
-                    <input/>
+                    <ProfileStatus status={props.status} updateStatus={props.updateStatus} />
                 </div>
-
         </div>
             <hr/>
         </div>
