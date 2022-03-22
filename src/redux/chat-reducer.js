@@ -20,15 +20,13 @@ let initialState = {
             {id: 5, name: 'Max'},
             {id: 6, name: 'Oleg'},
         ],
-
-
 }
 
 const chatReducer = (state = initialState, action) => {
 
     switch (action.type) {
         case SEND_MESSAGE_CHAT:
-            let newText = action.newChatText
+            let newText = action.newMessageBody
             return {
                 ...state,
                 messages: [...state.messages, {id: 7, message: newText} ]

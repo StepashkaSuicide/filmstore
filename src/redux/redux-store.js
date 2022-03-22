@@ -5,6 +5,7 @@ import navReducer from "./nav-reducer";
 import usersReducer from "./users-reducer";
 import authReducer from "./auth-reducer";
 import thunk from "redux-thunk";
+import {reducer as formReducer} from 'redux-form'
 
 
 
@@ -14,6 +15,7 @@ const reducers = combineReducers({
     navBarPage: navReducer,
     usersPage: usersReducer,
     auth: authReducer,
+    form: formReducer,
     }
 
 )

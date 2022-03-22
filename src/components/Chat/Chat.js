@@ -2,13 +2,19 @@ import React from 'react';
 import s from './Chat.module.css'
 import Dialog from "./DialogsChat/Dialogs";
 import Message from "./MessagesChat/Messages";
-import ChatForm from "./ChatForm";
+import {Field, reduxForm} from 'redux-form'
+
 
 const Chat = (props) => {
     let state = props.chatPage
     let dialogElement = state.dialogs.map(d => <Dialog key={d.id} name={d.name} id={d.id}/>)
     let messageElement = state.messages.map(m => <Message key={m.id} message={m.message} id={m.id}/>)
 
+
+
+    let addNewMessage = (values) => {
+        props.sendMessageChat(values.newMessageBody)
+    }
 
     return (
         <div>
@@ -21,7 +27,7 @@ const Chat = (props) => {
                 </div>
             </div>
             <div>
-                <ChatForm />
+                <AddMessageFormRedux onSubmit={addNewMessage}/>
                 <div
                     className={s.buttonContainer}>
                 </div>
@@ -29,6 +35,22 @@ const Chat = (props) => {
         </div>
     );
 };
+
+const AddMessageForm = (props) => {
+    return (
+        <form onSubmit={props.handleSubmit}>
+            <div className={s.buttonContainer}>
+                <Field component='textarea' name='newMessageBody'/>
+                <div>
+                    <button className={s.button}> отправить </button>
+                </div>
+            </div>
+        </form>
+    );
+}
+
+
+const AddMessageFormRedux = reduxForm({form: 'dialogAddMessageForm'})(AddMessageForm)
 export default Chat
 
 
